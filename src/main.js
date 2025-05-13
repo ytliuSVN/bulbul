@@ -1,5 +1,3 @@
-// import './assets/main.css'
-
 import { createApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -46,15 +44,8 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  // routes: routes,
   routes,
   linkActiveClass: "active", // class applied to active links
-  // scrollBehavior(to, from, savedPosition) {
-  //   if (savedPosition) {
-  //     return savedPosition;
-  //   }
-  //   return { left: 0, top: 0 }; // scroll to top on navigation
-  // },
 });
 
 app.use(router);
