@@ -10,6 +10,11 @@ body {
   margin: 0;
 }
 
+h1,
+p {
+  margin: 0;
+}
+
 /* Mobile First Styles (below 768px) */
 @media screen and (max-width: 767px) {
   .is-mobile {

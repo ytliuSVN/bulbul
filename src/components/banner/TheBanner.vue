@@ -16,7 +16,9 @@
 // No props or logic needed for now
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "@/styles/_mixins.scss";
+
 .banner {
   position: relative;
   display: flex;
@@ -27,28 +29,37 @@
 
 .banner-image {
   width: 100%;
-  height: 375px;
   object-fit: cover;
+
+  @include in-mobile {
+    height: 375px;
+  }
 }
 
 .banner-content {
   position: absolute;
-  bottom: 10%;
-  right: 10%;
+  bottom: 5%;
+  right: 5%;
   text-align: right;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   color: white;
+
+  @include in-mobile {
+    bottom: 5%;
+    right: 10%;
+    margin-left: 20px;
+  }
 
   h1 {
     font-weight: 700;
     font-size: 48px;
     line-height: 50px;
+    margin-bottom: 20px;
   }
 
   p {
     font-weight: 400;
     font-size: 18px;
-    margin: 8px 0 0 0;
   }
 }
 
