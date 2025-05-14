@@ -1,14 +1,11 @@
 <template>
   <div class="app">
-    <!-- Desktop only content -->
-    <div class="is-desktop">
+    <div v-if="isDesktop">
       <the-sidebar-menu />
     </div>
 
-    <!-- Content that appears in both views -->
-    <main :style="{ marginLeft: `${sidebarStore.sidebarWidth}px` }">
-      <!-- Mobile only content -->
-      <div class="is-mobile">
+    <main :style="{ marginLeft: mainMargin }">
+      <div v-if="!isDesktop">
         <the-navigation />
       </div>
 
@@ -22,17 +19,26 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
+import { useResponsive } from "@/composables/useResponsive";
 import { useSidebarStore } from "@/stores/sidebarStore";
+
 import TheNavigation from "./components/nav/TheNavigation.vue";
 import TheSidebarMenu from "./components/nav/TheSidebarMenu.vue";
 import TheBanner from "./components/banner/TheBanner.vue";
+
 import { TEXT_CONSTANTS } from "@/utility/textConstants";
 
 const sidebarStore = useSidebarStore();
+const { isDesktop } = useResponsive();
 
-console.log(sidebarStore.isCollapsed, sidebarStore.sidebarWidth)
+console.log(sidebarStore.isCollapsed, sidebarStore.sidebarWidth);
 
-console
+// Update main margin based on viewport and sidebar state
+const mainMargin = computed(() => {
+  if (!isDesktop.value) return 0;
+  return `${sidebarStore.sidebarWidth}px`;
+});
 </script>
 
 <style scoped lang="scss">
@@ -43,12 +49,7 @@ console
     flex: 1 1 0;
     width: 100%;
     overflow-x: hidden;
-    margin-left: 345px;
     transition: margin-left 0.3s ease;
-
-    // &.sidebar-collapsed {
-    //   margin-left: 80px;
-    // }
 
     @media (max-width: 1024px) {
       margin-left: 0;

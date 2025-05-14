@@ -3,7 +3,9 @@
     <div class="sidebar-header">
       <div class="logo">
         <div class="logo-icon"></div>
-        <h1 v-show="!sidebarStore.isCollapsed">{{ TEXT_CONSTANTS.SITE.TITLE }}</h1>
+        <h1 v-show="!sidebarStore.isCollapsed">
+          {{ TEXT_CONSTANTS.SITE.TITLE }}
+        </h1>
       </div>
       <button class="toggle-btn" @click="toggleSidebar">
         <img
@@ -12,7 +14,9 @@
               ? '@/assets/icons/expand.svg'
               : '@/assets/icons/collapse.svg'
           "
-          :alt="sidebarStore.isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'"
+          :alt="
+            sidebarStore.isCollapsed ? 'Expand' : 'Collapse'
+          "
         />
       </button>
     </div>
@@ -39,7 +43,7 @@
 
 <script setup>
 import { useSidebarStore } from "@/stores/sidebarStore";
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { routes } from "@/utility/routes";
 import { TEXT_CONSTANTS } from "@/utility/textConstants";
