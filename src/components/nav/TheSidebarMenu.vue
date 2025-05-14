@@ -1,8 +1,8 @@
 <template>
   <aside class="sidebar" :class="{ 'is-collapsed': sidebarStore.isCollapsed }">
     <div class="sidebar-header">
-      <div class="logo">
-        <div class="logo-icon" role="button" @click="toggleSidebar"></div>
+      <div class="logo" @click="toggleSidebar">
+        <div class="logo-icon" role="button"></div>
         <h1 v-show="!sidebarStore.isCollapsed">
           {{ TEXT_CONSTANTS.SITE.TITLE }}
         </h1>
