@@ -1,8 +1,9 @@
 import { createApp } from "vue";
+import App from "./App.vue";
+
 import { createRouter, createWebHistory } from "vue-router";
 
 import "/style.scss"
-import App from "./App.vue";
 
 const app = createApp(App);
 
@@ -12,28 +13,28 @@ const routes = [
     name: "traits",
     path: "/traits",
     components: {
-      default: () => import("./components/traits/TraitsList.vue"),
+      default: () => import("./views/traits/TraitsList.vue"),
     },
   },
   {
     name: "stories",
     path: "/stories",
     components: {
-      default: () => import("./components/stories/StoriesList.vue"),
+      default: () => import("./views/stories/StoriesList.vue"),
     },
   },
   {
     name: "photos",
     path: "/photos",
     components: {
-      default: () => import("./components/photos/PhotosList.vue"),
+      default: () => import("./views/photos/PhotosList.vue"),
     },
   },
   {
     name: "threats",
     path: "/threats",
     components: {
-      default: () => import("./components/threats/ThreatsList.vue"),
+      default: () => import("./views/threats/ThreatsList.vue"),
     },
   },
   {
