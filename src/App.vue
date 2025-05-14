@@ -32,8 +32,6 @@ import { TEXT_CONSTANTS } from "@/utility/textConstants";
 const sidebarStore = useSidebarStore();
 const { isDesktop } = useResponsive();
 
-console.log(sidebarStore.isCollapsed, sidebarStore.sidebarWidth);
-
 // Update main margin based on viewport and sidebar state
 const mainMargin = computed(() => {
   if (!isDesktop.value) return 0;
