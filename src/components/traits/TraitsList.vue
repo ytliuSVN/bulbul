@@ -1,5 +1,4 @@
 <template>
-  <router-view></router-view>
   <h2 class="page-title">{{ TEXT_CONSTANTS.NAVBAR.TRAITS }}</h2>
   <the-list :list-items="TEXT_CONSTANTS.TRAITS_LIST" />
 </template>

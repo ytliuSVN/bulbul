@@ -43,7 +43,6 @@ defineProps({
 }
 
 .list-item {
-  background: #dcccbc;
   padding: 1.5rem;
 
   .list-content {

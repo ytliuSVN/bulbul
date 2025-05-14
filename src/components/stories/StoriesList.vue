@@ -1,33 +1,18 @@
 <template>
-  <router-view></router-view>
-  <h2>白頭翁的故事</h2>
-  <!-- <ul>
-    <teams-item
-      v-for="team in teams"
-      :key="team.id"
-      :id="team.id"
-      :name="team.name"
-      :member-count="team.members.length"
-    ></teams-item>
-  </ul> -->
+  <h2 class="page-title">{{ TEXT_CONSTANTS.NAVBAR.STORIES }}</h2>
+  <the-list :list-items="TEXT_CONSTANTS.Lorem_LIST" />
 </template>
 
-<!-- <script>
-import TeamsItem from './TeamsItem.vue';
-
-export default {
-  components: {
-    TeamsItem,
-  },
-  inject: ['teams'],
-};
+<script setup>
+import TheList from "@/components/list/TheList.vue";
+import { TEXT_CONSTANTS } from "@/utility/textConstants";
 </script>
 
-<style scoped>
-ul {
-  list-style: none;
-  margin: 2rem auto;
-  max-width: 40rem;
-  padding: 0;
+<style scoped lang="scss">
+.page-title {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  font-size: 28px;
+  font-weight: 700;
 }
-</style> -->
+</style>
