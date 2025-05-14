@@ -2,23 +2,11 @@
   <aside class="sidebar" :class="{ 'is-collapsed': sidebarStore.isCollapsed }">
     <div class="sidebar-header">
       <div class="logo">
-        <div class="logo-icon"></div>
+        <div class="logo-icon" role="button" @click="toggleSidebar"></div>
         <h1 v-show="!sidebarStore.isCollapsed">
           {{ TEXT_CONSTANTS.SITE.TITLE }}
         </h1>
       </div>
-      <button class="toggle-btn" @click="toggleSidebar">
-        <img
-          :src="
-            sidebarStore.isCollapsed
-              ? '@/assets/icons/expand.svg'
-              : '@/assets/icons/collapse.svg'
-          "
-          :alt="
-            sidebarStore.isCollapsed ? 'Expand' : 'Collapse'
-          "
-        />
-      </button>
     </div>
 
     <nav class="sidebar-nav">
@@ -38,6 +26,17 @@
         </li>
       </ul>
     </nav>
+
+    <!-- <button class="toggle-btn" @click="toggleSidebar">
+      <img
+        :src="
+          sidebarStore.isCollapsed
+            ? '@/assets/icons/expand.svg'
+            : '@/assets/icons/collapse.svg'
+        "
+        :alt="sidebarStore.isCollapsed ? 'Expand' : 'Collapse'"
+      />
+    </button> -->
   </aside>
 </template>
 
@@ -68,6 +67,9 @@ const toggleSidebar = () => {
   top: 0;
   transition: width 0.3s ease;
 
+  display: flex;
+  flex-direction: column;
+
   &.is-collapsed {
     width: 80px;
 
@@ -95,8 +97,12 @@ const toggleSidebar = () => {
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background: #f5f5f5;
-        flex-shrink: 0;
+
+        background-image: url("@/assets/logo.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
       }
 
       h1 {
