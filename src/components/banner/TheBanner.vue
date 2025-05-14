@@ -12,27 +12,23 @@
   </div>
 </template>
 
-<script setup>
-// No props or logic needed for now
-</script>
-
 <style scoped lang="scss">
 @import "@/styles/_mixins.scss";
 
 .banner {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  overflow: hidden;
 }
 
 .banner-image {
   width: 100%;
   object-fit: cover;
+  transform: scale(1.8);
 
   @include in-mobile {
     height: 375px;
+    transform: scale(2);
   }
 }
 
@@ -60,12 +56,6 @@
   p {
     font-weight: 400;
     font-size: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .banner-image {
-    object-fit: cover; /* For mobile */
   }
 }
 </style>
