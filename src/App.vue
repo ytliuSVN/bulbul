@@ -25,7 +25,7 @@ import TheBanner from "./components/banner/TheBanner.vue";
 import { TEXT_CONSTANTS } from "@/utility/textConstants";
 </script>
 
-<style>
+<style scoped lang="scss">
 /* Layout Styles */
 .layout {
   display: flex;

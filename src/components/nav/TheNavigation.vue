@@ -35,7 +35,7 @@ const toggleMenu = () => {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 header {
   width: 100%;
   background-color: white;
@@ -106,7 +106,7 @@ header {
   border-radius: 50%;
 
   .logo {
-    background-image: url("@/assets/icons/bird.svg");
+    background-image: url("@/assets/logo.svg");
     width: 37px;
     height: 33px;
     background-size: cover;
