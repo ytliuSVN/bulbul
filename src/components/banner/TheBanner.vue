@@ -13,8 +13,6 @@
 </template>
 
 <style scoped lang="scss">
-@import "@/styles/_mixins.scss";
-
 .banner {
   position: relative;
   display: flex;
@@ -26,7 +24,7 @@
   object-fit: cover;
   transform: scale(1.8);
 
-  @include in-mobile {
+  @include mixins.in-mobile {
     height: 375px;
     transform: scale(2);
   }
@@ -40,7 +38,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   color: white;
 
-  @include in-mobile {
+  @include mixins.in-mobile {
     bottom: 5%;
     right: 10%;
     margin-left: 20px;
