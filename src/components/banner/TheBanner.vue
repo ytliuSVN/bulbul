@@ -1,0 +1,60 @@
+<template>
+  <div class="banner">
+    <img src="@/assets/wallpaper.svg" alt="Banner Image" class="banner-image" />
+    <div class="banner-content">
+      <h1>
+        <slot name="title">Default Title</slot>
+      </h1>
+      <p>
+        <slot name="subtitle">Default Subtitle</slot>
+      </p>
+    </div>
+  </div>
+</template>
+
+<script setup>
+// No props or logic needed for now
+</script>
+
+<style scoped>
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner-image {
+  width: 100%;
+  height: 375px;
+  object-fit: cover;
+}
+
+.banner-content {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  text-align: right;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+
+  h1 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 50px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    margin: 8px 0 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-image {
+    object-fit: cover; /* For mobile */
+  }
+}
+</style>

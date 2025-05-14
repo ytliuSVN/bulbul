@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* Mobile First Styles (below 768px) */
+@media screen and (max-width: 767px) {
+  .is-mobile {
+    display: block;
+  }
+
+  .is-desktop {
+    display: none;
+  }
+}
+
+/* Desktop Styles (768px and above) */
+@media screen and (min-width: 768px) {
+  .is-mobile {
+    display: none;
+  }
+
+  .is-desktop {
+    display: block;
+  }
+}
