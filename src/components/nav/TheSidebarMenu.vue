@@ -26,17 +26,6 @@
         </li>
       </ul>
     </nav>
-
-    <!-- <button class="toggle-btn" @click="toggleSidebar">
-      <img
-        :src="
-          sidebarStore.isCollapsed
-            ? '@/assets/icons/expand.svg'
-            : '@/assets/icons/collapse.svg'
-        "
-        :alt="sidebarStore.isCollapsed ? 'Expand' : 'Collapse'"
-      />
-    </button> -->
   </aside>
 </template>
 
