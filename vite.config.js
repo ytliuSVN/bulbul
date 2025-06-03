@@ -1,26 +1,35 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from "node:url";
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import vueDevTools from "vite-plugin-vue-devtools";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/bulbul/' : '/',
-  plugins: [
-    vue(),
-    vueDevTools(),
-  ],
+  base: process.env.NODE_ENV === "production" ? "/bulbul/" : "/",
+  plugins: [vue(), vueDevTools()],
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/styles/_mixins.scss" as mixins;`
-      }
-    }
+        additionalData: `@use "@/styles/_mixins.scss" as mixins;`,
+      },
+    },
+  },
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            return "vendor";
+          }
+        },
+      },
+    },
   },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-})
+});
