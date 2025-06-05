@@ -29,6 +29,10 @@ defineProps({
 </script>
 
 <style scoped lang="scss">
+$rhythm-unit: 4px;
+$space-4: $rhythm-unit;
+$space-8: $rhythm-unit * 2;
+
 .list-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -60,7 +64,7 @@ defineProps({
         margin: 0;
         font-weight: 700;
         font-size: 36px;
-        line-height: 40px;
+        line-height: $space-8 * 5;
       }
 
       .donut-icon {
